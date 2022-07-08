@@ -9,10 +9,10 @@
     <nav class="center">
       <ul class="d-flex justify-space-between">
         <li><v-btn text to="/" exact>Home</v-btn></li>
-        <li><v-btn text to="/rooms" exact>Rooms</v-btn></li>
         <!--<li><v-btn text to="/about-us" exact>About Us</v-btn></li>-->
-        <li><v-btn outlined color="primary" to="/login" exact>Login</v-btn></li>
-        <li><v-btn color="primary" to="/sign-up" exact>Sign up</v-btn></li>
+        <li v-if="!$store.state.user"><v-btn outlined color="primary" to="/login" exact>Login</v-btn></li>
+        <li v-if="!$store.state.user"><v-btn color="primary" to="/sign-up" exact>Sign up</v-btn></li>
+        <li v-else><v-btn color="primary" exact>Hello {{ $store.state.user.name }}</v-btn></li>
       </ul>
     </nav>
   </div>

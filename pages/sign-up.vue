@@ -39,6 +39,7 @@
 import Logo from '../components/general/Logo'
 import handlers from '../mixins/handlers'
 import api from '../api'
+import Cookies from "js-cookie";
 export default {
   components: { Logo },
   mixins: [handlers],
@@ -51,20 +52,18 @@ export default {
   },
   methods: {
     register() {
-      fetch(api + '/register', {
+      this.$axios({
         method: 'POST',
-        body: {
-          name: this.name,
+        url: '/register',
+        data: JSON.stringify({
           phone: this.phone,
           password: this.password,
-        },
+          name: this.name
+        })
+      }).then(({data}) => {
+          this.success('You have successfully signed up...')
+          this.$router.push('/login')
       })
-        .then(() => {
-          this.handleSuccessMessage('/login', 'ثبت نام با موفقیت انجام شد')
-        })
-        .catch((err) => {
-          this.handleReqError(err)
-        })
     },
   },
 }

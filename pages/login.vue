@@ -3,7 +3,7 @@
     <v-card width="400">
       <v-card-text>
         <div class="center mb-5">
-          <Logo />
+          <Logo/>
         </div>
         <v-text-field
           label="Phone"
@@ -30,8 +30,10 @@
 import Logo from '../components/general/Logo'
 import handlers from '../mixins/handlers'
 import api from '../api'
+import Cookies from 'js-cookie'
+
 export default {
-  components: { Logo },
+  components: {Logo},
   mixins: [handlers],
   data() {
     return {
@@ -41,25 +43,25 @@ export default {
   },
   methods: {
     login() {
-      fetch(api + '/authenticate', {
+      this.$axios({
         method: 'POST',
-        body: {
+        url: '/authenticate',
+        data: JSON.stringify({
           phone: this.phone,
-          password: this.password,
-        },
-      })
-        .then((data) => {
-          this.success('شما با موفقیت وارد شدید')
+          password: this.password
+        })
+      }).then(({data}) => {
+        if (data.TOKEN) {
+          Cookies.set('user_token', data.TOKEN)
 
-          if (data.type === 'admin') {
-            this.$router.push('/panel')
-          } else {
-            this.$router.push('/')
-          }
-        })
-        .catch((err) => {
-          this.handleReqError(err)
-        })
+          this.$store.commit("addUser", data)
+
+          this.success('You have successfully logged in...')
+          this.$router.push('/')
+        } else {
+          this.error('Wrong credentials!')
+        }
+      })
     },
   },
 }

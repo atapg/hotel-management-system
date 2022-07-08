@@ -1,8 +1,7 @@
 <template>
   <div class="pos-relative">
-    <p class="display-1 title-z-index font-weight-bold mb-10">Popular Rooms</p>
+    <p class="display-1 title-z-index font-weight-bold mb-10">Rooms</p>
     <div class="title-z-index" v-if="rooms.length <= 0">
-      <v-alert type="info">No popular rooms :(</v-alert>
     </div>
     <div class="cards-section d-flex justify-space-between">
       <Card
@@ -31,8 +30,7 @@ export default {
     }
   },
   mounted() {
-    //TODO get rooms from here 2
-    // this.getRooms()
+    this.getRooms()
   },
   methods: {
     getRooms() {
