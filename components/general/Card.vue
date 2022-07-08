@@ -1,18 +1,26 @@
 <template>
-  <div class="card-container white shadow border">
-    <img :src="require('assets/images/villa1.jpg')" alt="" />
-    <div class="info-section px-5 py-3">
-      <div class="facilities d-flex flex-wrap">
-        <p class="caption font-weight-medium mb-0" style="color: red">Food</p>
-        <p class="caption font-weight-medium mb-0" style="color: blue">
-          Parking
-        </p>
-        <p class="caption font-weight-medium mb-0" style="color: purple">
-          24 Service
-        </p>
+  <div class="card-container white shadow border d-flex flex-column">
+    <img :src="require(`assets/images/${img}`)" alt="" />
+    <div class="info-section px-5 py-3 d-flex flex-column flex">
+      <div class="d-flex flex-column flex">
+        <div class="facilities d-flex flex-wrap">
+          <p
+            v-for="(facility, index) in facilities"
+            class="caption font-weight-medium mb-0"
+            :class="getFacilityColor(index) + '--text'"
+          >
+            {{ facility }}
+          </p>
+        </div>
+        <p class="title font-weight-bold">{{ name }}</p>
       </div>
-      <p class="title font-weight-bold">Master room for chilling</p>
-      <v-btn block elevation="0" outlined color="primary">
+      <v-btn
+        :to="`/rooms/${id}`"
+        width="100%"
+        elevation="0"
+        outlined
+        color="primary"
+      >
         <v-icon left>mdi-briefcase-check-outline</v-icon>
         Reserve
       </v-btn>
@@ -21,7 +29,31 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: ['id', 'name', 'facilities', 'img'],
+  methods: {
+    getFacilityColor(index) {
+      switch (index) {
+        case 0:
+          return 'cyan'
+        case 1:
+          return 'orange'
+        case 2:
+          return 'green'
+        case 3:
+          return 'purple'
+        case 4:
+          return 'red'
+        case 5:
+          return 'blue'
+        case 6:
+          return 'pink'
+        default:
+          return 'black'
+      }
+    },
+  },
+}
 </script>
 
 <style scoped lang="scss">
