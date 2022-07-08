@@ -31,19 +31,19 @@ export default {
         },
         {
           id: 2,
-          img: 'villa1.jpg',
+          img: 'villa2.jpg',
           facilities: ['View', 'Parking', 'Cooler', 'Food', 'Massage'],
           name: 'Ocean view Room',
         },
         {
           id: 3,
-          img: 'villa1.jpg',
+          img: 'villa3.jpg',
           facilities: ['Food'],
           name: '2kid bedroom',
         },
         {
           id: 4,
-          img: 'villa1.jpg',
+          img: 'villa4.jpg',
           facilities: ['Food', 'Parking', 'City', 'Pool'],
           name: 'City view Room',
         },

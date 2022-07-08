@@ -1,7 +1,7 @@
 <template>
   <div class="row-container my-15">
     <v-row>
-      <v-col xl="4" lg="4" md="6" sm="12" cols="12">
+      <v-col xl="3" lg="3" md="6" sm="12" cols="12">
         <v-card>
           <v-card-title> Search Room </v-card-title>
           <v-card-text>
@@ -10,7 +10,7 @@
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col xl="8" lg="8" md="6" sm="12" cols="12">
+      <v-col xl="9" lg="9" md="6" sm="12" cols="12">
         <v-row class="mb-10">
           <v-col
             xl="4"
@@ -53,49 +53,49 @@ export default {
         },
         {
           id: 2,
-          img: 'villa1.jpg',
+          img: 'villa2.jpg',
           facilities: ['View', 'Parking', 'Cooler', 'Food', 'Massage'],
           name: 'Ocean view Room',
         },
         {
           id: 3,
-          img: 'villa1.jpg',
+          img: 'villa3.jpg',
           facilities: ['Food'],
           name: '2kid bedroom',
         },
         {
           id: 4,
-          img: 'villa1.jpg',
+          img: 'villa4.jpg',
           facilities: ['Food', 'Parking', 'City', 'Pool'],
           name: 'City view Room',
         },
         {
-          id: 1,
-          img: 'villa1.jpg',
+          id: 5,
+          img: 'villa5.jpg',
           facilities: ['Food', 'Parking', 'Pool'],
           name: 'Master room for chilling',
         },
         {
-          id: 2,
-          img: 'villa1.jpg',
+          id: 6,
+          img: 'villa6.jpg',
           facilities: ['View', 'Parking', 'Cooler', 'Food', 'Massage'],
           name: 'Ocean view Room',
         },
         {
-          id: 3,
-          img: 'villa1.jpg',
+          id: 7,
+          img: 'villa7.jpg',
           facilities: ['Food'],
           name: '2kid bedroom',
         },
         {
-          id: 4,
-          img: 'villa1.jpg',
+          id: 8,
+          img: 'villa8.jpg',
           facilities: ['Food', 'Parking', 'City', 'Pool'],
           name: 'City view Room',
         },
         {
-          id: 1,
-          img: 'villa1.jpg',
+          id: 9,
+          img: 'villa9.jpg',
           facilities: ['Food', 'Parking', 'Pool'],
           name: 'Master room for chilling',
         },
