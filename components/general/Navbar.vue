@@ -10,8 +10,9 @@
       <ul class="d-flex justify-space-between">
         <li><v-btn text to="/" exact>Home</v-btn></li>
         <li><v-btn text to="/rooms" exact>Rooms</v-btn></li>
-        <li><v-btn text to="/about-us" exact>About Us</v-btn></li>
-        <li><v-btn outlined color="primary" exact>Login</v-btn></li>
+        <!--<li><v-btn text to="/about-us" exact>About Us</v-btn></li>-->
+        <li><v-btn outlined color="primary" to="/login" exact>Login</v-btn></li>
+        <li><v-btn color="primary" to="/sign-up" exact>Sign up</v-btn></li>
       </ul>
     </nav>
   </div>
