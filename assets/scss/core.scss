@@ -29,6 +29,6 @@ html {
 }
 
 .border {
-  border-radius: $main-border-radius;
-  overflow: hidden;
+  border-radius: $main-border-radius !important;
+  overflow: hidden !important;
 }

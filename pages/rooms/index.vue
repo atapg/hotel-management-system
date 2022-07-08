@@ -2,7 +2,7 @@
   <div class="row-container my-15">
     <v-row>
       <v-col xl="3" lg="3" md="6" sm="12" cols="12">
-        <v-card>
+        <v-card class="border">
           <v-card-title> Search Room </v-card-title>
           <v-card-text>
             <v-text-field label="Search ..." outlined dense></v-text-field>
