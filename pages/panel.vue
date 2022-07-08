@@ -13,6 +13,14 @@
                 <v-list-item-title v-text="item.text"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
+            <v-list-item to="/">
+              <v-list-item-icon>
+                <v-icon> mdi-home-outline</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title>Back To Home</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
           </v-list-item-group>
         </v-list>
       </v-card>
@@ -32,9 +40,8 @@ export default {
     return {
       selectedItem: 1,
       items: [
-        { text: 'Real-Time', icon: 'mdi-clock' },
-        { text: 'Audience', icon: 'mdi-account' },
-        { text: 'Conversions', icon: 'mdi-flag' },
+        { text: 'Rooms', icon: 'mdi-sofa-single-outline' },
+        { text: 'Users', icon: 'mdi-account-group-outline' },
       ],
     }
   },

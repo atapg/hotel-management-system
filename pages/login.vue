@@ -29,6 +29,7 @@
 <script>
 import Logo from '../components/general/Logo'
 import handlers from '../mixins/handlers'
+import api from '../api'
 export default {
   components: { Logo },
   mixins: [handlers],
@@ -40,10 +41,9 @@ export default {
   },
   methods: {
     login() {
-      this.$axios({
+      fetch(api + '/authenticate', {
         method: 'POST',
-        url: '/authenticate',
-        data: {
+        body: {
           phone: this.phone,
           password: this.password,
         },

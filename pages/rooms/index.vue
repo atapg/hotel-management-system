@@ -49,6 +49,7 @@
 <script>
 import Card from '../../components/general/Card'
 import handlers from '../../mixins/handlers'
+import api from '../../api'
 export default {
   components: { Card },
   mixins: [handlers],
@@ -64,9 +65,8 @@ export default {
   },
   methods: {
     getRooms() {
-      this.$axios({
+      fetch(api + '/rooms', {
         method: 'GET',
-        url: '/rooms',
       }).then(({ data }) => {
         this.rooms = data
       })
