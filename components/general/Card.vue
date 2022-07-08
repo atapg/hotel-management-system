@@ -1,5 +1,8 @@
 <template>
-  <div class="card-container white shadow border d-flex flex-column">
+  <div
+    class="card-container white shadow border d-flex flex-column flex"
+    :class="fillHeight && 'fill-height'"
+  >
     <img :src="require(`assets/images/${img}`)" alt="" />
     <div class="info-section px-5 py-3 d-flex flex-column flex">
       <div class="d-flex flex-column flex">
@@ -30,7 +33,7 @@
 
 <script>
 export default {
-  props: ['id', 'name', 'facilities', 'img'],
+  props: ['id', 'name', 'facilities', 'img', 'fillHeight'],
   methods: {
     getFacilityColor(index) {
       switch (index) {

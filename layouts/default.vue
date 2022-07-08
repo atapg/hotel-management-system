@@ -12,14 +12,17 @@
           </v-col>
         </v-footer>
       </div>
+      <ScrollToTop />
     </v-app>
   </div>
 </template>
 
 <script>
 import Navbar from '../components/general/Navbar'
+import ScrollToTop from '../components/general/ScrollToTop'
+
 export default {
-  components: { Navbar },
+  components: { Navbar, ScrollToTop },
 }
 </script>
 
