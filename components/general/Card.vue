@@ -15,7 +15,17 @@
             {{ facility }}
           </p>
         </div>
-        <p class="title font-weight-bold">{{ name }}</p>
+        <p class="title font-weight-bold mb-0">{{ name }}</p>
+      </div>
+      <div class="d-flex justify-space-between mb-3">
+        <div class="center">
+          <p class="capacity mb-0">{{ price }}$</p>
+          <v-icon color="green">mdi-cash</v-icon>
+        </div>
+        <div class="center">
+          <p class="capacity mb-0">{{ capacity }}</p>
+          <v-icon color="cyan">mdi-door</v-icon>
+        </div>
       </div>
       <v-btn
         :to="`/rooms/${id}`"
@@ -33,7 +43,7 @@
 
 <script>
 export default {
-  props: ['id', 'name', 'facilities', 'img', 'fillHeight'],
+  props: ['id', 'name', 'facilities', 'img', 'fillHeight', 'price', 'capacity'],
   methods: {
     getFacilityColor(index) {
       switch (index) {

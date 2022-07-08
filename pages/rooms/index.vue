@@ -10,7 +10,13 @@
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col xl="9" lg="9" md="6" sm="12" cols="12">
+      <v-col xl="9" lg="9" md="6" sm="12" cols="12" v-if="rooms.length === 0">
+        <v-alert color="orange" type="warning">
+          Unfortunately there are no available rooms for you. Please try check
+          again later!
+        </v-alert>
+      </v-col>
+      <v-col xl="9" lg="9" md="6" sm="12" cols="12" v-else>
         <v-row class="mb-10">
           <v-col
             xl="4"
@@ -25,6 +31,8 @@
               :img="item.img"
               :name="item.name"
               :id="item.id"
+              :price="item.price"
+              :capacity="item.capacity"
               :facilities="item.facilities"
               :fillHeight="true"
             />
@@ -40,68 +48,29 @@
 
 <script>
 import Card from '../../components/general/Card'
+import handlers from '../../mixins/handlers'
 export default {
   components: { Card },
+  mixins: [handlers],
   data() {
     return {
-      rooms: [
-        {
-          id: 1,
-          img: 'villa1.jpg',
-          facilities: ['Food', 'Parking', 'Pool'],
-          name: 'Master room for chilling',
-        },
-        {
-          id: 2,
-          img: 'villa2.jpg',
-          facilities: ['View', 'Parking', 'Cooler', 'Food', 'Massage'],
-          name: 'Ocean view Room',
-        },
-        {
-          id: 3,
-          img: 'villa3.jpg',
-          facilities: ['Food'],
-          name: '2kid bedroom',
-        },
-        {
-          id: 4,
-          img: 'villa4.jpg',
-          facilities: ['Food', 'Parking', 'City', 'Pool'],
-          name: 'City view Room',
-        },
-        {
-          id: 5,
-          img: 'villa5.jpg',
-          facilities: ['Food', 'Parking', 'Pool'],
-          name: 'Master room for chilling',
-        },
-        {
-          id: 6,
-          img: 'villa6.jpg',
-          facilities: ['View', 'Parking', 'Cooler', 'Food', 'Massage'],
-          name: 'Ocean view Room',
-        },
-        {
-          id: 7,
-          img: 'villa7.jpg',
-          facilities: ['Food'],
-          name: '2kid bedroom',
-        },
-        {
-          id: 8,
-          img: 'villa8.jpg',
-          facilities: ['Food', 'Parking', 'City', 'Pool'],
-          name: 'City view Room',
-        },
-        {
-          id: 9,
-          img: 'villa9.jpg',
-          facilities: ['Food', 'Parking', 'Pool'],
-          name: 'Master room for chilling',
-        },
-      ],
+      rooms: [],
       page: 1,
     }
+  },
+  mounted() {
+    //TODO get rooms here
+    // this.getRooms()
+  },
+  methods: {
+    getRooms() {
+      this.$axios({
+        method: 'GET',
+        url: '/rooms',
+      }).then(({ data }) => {
+        this.rooms = data
+      })
+    },
   },
 }
 </script>
