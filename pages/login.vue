@@ -48,8 +48,14 @@ export default {
           password: this.password,
         },
       })
-        .then(() => {
-          this.handleSuccessMessage('/panel', 'شما با موفقیت وارد شدید')
+        .then((data) => {
+          this.success('شما با موفقیت وارد شدید')
+
+          if (data.type === 'admin') {
+            this.$router.push('/panel')
+          } else {
+            this.$router.push('/')
+          }
         })
         .catch((err) => {
           this.handleReqError(err)

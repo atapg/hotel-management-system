@@ -3,7 +3,7 @@
     class="card-container white shadow border d-flex flex-column flex"
     :class="fillHeight && 'fill-height'"
   >
-    <img :src="require(`assets/images/${img}`)" alt="" />
+    <img :src="require(`assets/images/villa${id}.jpg`)" alt="" />
     <div class="info-section px-5 py-3 d-flex flex-column flex">
       <div class="d-flex flex-column flex">
         <div class="facilities d-flex flex-wrap">
