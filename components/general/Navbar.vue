@@ -13,7 +13,8 @@
 </template>
 
 <script>
-import Logo from '../ui/Logo'
+import Logo from './Logo'
+
 export default {
   components: { Logo },
 }

@@ -84,12 +84,17 @@
         </div>
       </section>
       <!--Hero Bar-->
+      <!--Cards Carousel-->
+      <CardsCarousel class="mb-15" />
+      <!--Cards Carousel-->
     </div>
   </div>
 </template>
 
 <script>
+import CardsCarousel from '../components/general/CardsCarousel'
 export default {
+  components: { CardsCarousel },
   data() {
     return {
       heroItems: [
