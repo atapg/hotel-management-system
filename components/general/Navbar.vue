@@ -3,10 +3,10 @@
     <div class="logo"><Logo /></div>
     <nav>
       <ul class="d-flex justify-space-between">
-        <li><v-btn text>Home</v-btn></li>
-        <li><v-btn text>Rooms</v-btn></li>
-        <li><v-btn text>About Us</v-btn></li>
-        <li><v-btn outlined color="primary">Login</v-btn></li>
+        <li><v-btn text to="/" exact>Home</v-btn></li>
+        <li><v-btn text to="/rooms" exact>Rooms</v-btn></li>
+        <li><v-btn text to="/about-us" exact>About Us</v-btn></li>
+        <li><v-btn outlined color="primary" exact>Login</v-btn></li>
       </ul>
     </nav>
   </div>
