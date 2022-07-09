@@ -57,7 +57,12 @@ export default {
           this.$store.commit("addUser", data)
 
           this.success('You have successfully logged in...')
-          this.$router.push('/')
+
+          if(data.type === 'admin') {
+            this.$router.push('/panel')
+          } else {
+            this.$router.push('/')
+          }
         } else {
           this.error('Wrong credentials!')
         }

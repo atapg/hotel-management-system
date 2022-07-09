@@ -69,14 +69,14 @@
                   {{ comment.content }}
                 </v-card-text>
               </v-card>
+            </div>
 
-              <v-alert type="warning" v-if="!$store.state.user">
-                To submit a comment please login first.
-              </v-alert>
-              <div v-else>
-                <v-textarea label="Comment" outlined v-model="userComment" class="mt-7" />
-                <v-btn color="primary" @click="submitComment">Submit</v-btn>
-              </div>
+            <v-alert type="warning" v-if="!$store.state.user">
+              To submit a comment please login first.
+            </v-alert>
+            <div v-else>
+              <v-textarea label="Comment" outlined v-model="userComment" class="mt-7" />
+              <v-btn color="primary" @click="submitComment">Submit</v-btn>
             </div>
           </div>
         </v-card-text>
